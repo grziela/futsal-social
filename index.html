@@ -44,8 +44,12 @@ text-decoration:none;padding:15px 28px;border:2px solid var(--gold);background:v
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--ink);padding:10px 16px;z-index:100}
 .skip:focus{left:8px;top:8px}
 .row{display:flex;gap:14px;flex-wrap:wrap}
-/* header */
-header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(0,27,181,.94);backdrop-filter:blur(8px);border-bottom:3px solid var(--gold)}
+/* header, progresso e botão flutuante */
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(0,27,181,.94);backdrop-filter:blur(8px);border-bottom:3px solid var(--gold);transition:box-shadow .3s}
+header.sc{box-shadow:0 6px 24px rgba(0,10,90,.45)}
+#prog{position:fixed;top:0;left:0;height:4px;width:0;background:var(--green);z-index:60;pointer-events:none}
+.fab{position:fixed;right:14px;bottom:14px;z-index:45;background:var(--gold);color:var(--ink);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;text-decoration:none;padding:14px 20px;box-shadow:0 8px 24px rgba(0,10,90,.5);transform:translateY(120px);transition:transform .35s;display:none}
+.fab.on{transform:none}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--h1);font-size:1.3rem;text-transform:uppercase;white-space:nowrap}
 .brand img{width:46px;height:46px}
@@ -70,9 +74,15 @@ nav a.cta:hover{color:var(--ink);background:var(--cream)}
 .hero p{margin-bottom:26px;text-shadow:0 1px 10px rgba(0,10,90,.55)}
 /* quem somos */
 .about{background:var(--blue)}
-.about .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.verse{border-left:6px solid var(--gold);padding:6px 0 6px 20px;font-weight:600;font-size:1.1rem}
-.verse b{display:block;color:var(--gold);font-size:.9rem;margin-top:6px}
+.about .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.verse{border-left:6px solid var(--gold);padding:4px 0 4px 18px;font-weight:600;font-size:1rem}
+.verse b{display:block;color:var(--gold);font-size:.85rem;margin-top:4px}
+.vals{margin-top:26px}
+.vals-t{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--tx);font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;padding:9px 14px;border:2px solid rgba(255,255,255,.55);background:transparent;color:#fff;cursor:pointer;transition:.2s}
+.chip[aria-pressed="true"],.chip:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.valtxt{margin-top:16px;border-left:4px solid var(--gold);padding:2px 0 2px 14px;font-size:1rem;line-height:1.55;min-height:3.1em}
 /* números */
 .nums{background:var(--navy);border-block:4px solid var(--gold)}
 .nums .g{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding-block:clamp(34px,5vw,56px)}
@@ -80,6 +90,14 @@ nav a.cta:hover{color:var(--ink);background:var(--cream)}
 .nums .g>div+div{border-left:2px solid rgba(255,199,44,.35)}
 .nums strong{display:block;font-family:var(--h1);font-size:clamp(2.6rem,6vw,4rem);color:var(--gold);line-height:1}
 .nums span{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+/* próximos jogos (aparece só quando houver jogos cadastrados) */
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-top:28px}
+.game{display:flex;gap:16px;align-items:center;background:var(--navy);border-left:6px solid var(--gold);padding:16px 18px}
+.game .d{font-family:var(--h1);font-weight:700;text-align:center;line-height:1;min-width:58px}
+.game .d b{display:block;font-size:2.4rem;color:var(--gold)}
+.game .d span{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}
+.game h3{font-family:var(--h2);font-weight:700;text-transform:uppercase;font-size:1.3rem;line-height:1.1}
+.game small{display:block;font-size:.8rem;opacity:.9;margin-top:4px}
 /* história */
 .story .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
 .frame{position:relative}
@@ -96,6 +114,7 @@ nav a.cta:hover{color:var(--ink);background:var(--cream)}
 .pic.fit img{object-fit:contain}
 .pic .ph.fill{position:absolute;inset:0;width:100%;height:100%}
 /* trajetória */
+.teams{background:var(--navy)}
 .tl{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(215px,1fr);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 0 16px;margin-top:10px;align-items:start}
 .tl article{scroll-snap-align:start;border-top:5px solid var(--gold);padding-top:14px;transition:transform .3s}
 .tl article:hover{transform:translateY(-6px)}
@@ -103,7 +122,6 @@ nav a.cta:hover{color:var(--ink);background:var(--cream)}
 .tl b{display:block;text-transform:uppercase;margin:6px 0 4px}
 .tl p{font-weight:400;font-size:.92rem;line-height:1.55}
 /* equipes */
-.teams{background:var(--navy)}
 .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .tabs:empty{display:none}
 .tab{font-family:var(--tx);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem;padding:10px 18px;border:2px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;transition:.2s}
@@ -129,6 +147,7 @@ nav a.cta:hover{color:var(--ink);background:var(--cream)}
 .medal.ouro .yr{font-family:var(--h1);font-size:clamp(3.5rem,9vw,6.5rem);line-height:.9;color:var(--gold);-webkit-text-stroke:2px var(--navy);display:block}
 .medal.ouro p{margin:10px 0;font-weight:400}
 .medal[tabindex]{cursor:pointer}
+.medal:hover .pic img{transform:scale(1.05)}
 .medal .info{position:absolute;inset:auto 0 0;background:rgba(0,27,181,.97);color:#fff;padding:16px;transform:translateY(101%);transition:transform .35s}
 .medal:hover .info,.medal:focus-within .info,.medal.open .info{transform:none}
 .medal .info b{color:var(--gold)}
@@ -158,14 +177,29 @@ nav a.cta:hover{color:var(--ink);background:var(--cream)}
 .news h3{font-family:var(--h2);text-transform:uppercase;font-size:1.25rem;line-height:1.1;margin:6px 0}
 .empty{border:2px dashed var(--gold);padding:30px;text-align:center;font-weight:600;grid-column:1/-1}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;grid-auto-flow:dense;gap:12px;margin-top:30px}
-.gal button{border:0;padding:0;cursor:zoom-in;overflow:hidden;background:#0a1f8a}
-.gal button:nth-child(1),.gal button:nth-child(6){grid-column:span 2;grid-row:span 2}
+.gal button{border:0;padding:0;cursor:zoom-in;overflow:hidden;background:#0a1f8a;position:relative}
+.gal button:nth-child(6n+1){grid-column:span 2;grid-row:span 2}
+.gal button::after{content:"+";position:absolute;right:10px;bottom:10px;width:34px;height:34px;background:var(--gold);color:var(--ink);font-weight:800;font-size:1.3rem;line-height:34px;text-align:center;opacity:0;transform:scale(.6);transition:.25s}
+.gal button:hover::after,.gal button:focus-visible::after{opacity:1;transform:none}
 .gal img,.gal .ph{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .gal button:hover img{transform:scale(1.07)}
 dialog{border:0;background:rgba(0,10,70,.96);width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;color:#fff}
 dialog[open]{display:flex;align-items:center;justify-content:center}
-dialog img{max-height:88vh;max-width:92vw;object-fit:contain}
-dialog button{position:absolute;top:16px;right:16px;background:var(--gold);border:0;font-size:1.6rem;width:48px;height:48px;cursor:pointer}
+dialog img{max-height:84vh;max-width:90vw;object-fit:contain}
+dialog button{position:absolute;background:var(--gold);border:0;color:var(--ink);font-size:1.6rem;width:48px;height:48px;cursor:pointer}
+#lbx{top:16px;right:16px}
+#lbp,#lbn{top:50%;margin-top:-24px}
+#lbp{left:12px}#lbn{right:12px}
+#lbc{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-weight:700;font-size:.85rem;letter-spacing:.08em}
+/* redes */
+.social{background:var(--gold);color:var(--ink)}
+.social .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-block:clamp(34px,5vw,54px)}
+.social h2{font-family:var(--h1);font-weight:700;text-transform:uppercase;font-size:clamp(1.8rem,4.5vw,3rem);line-height:1.05}
+.social p{max-width:52ch;margin-top:6px}
+.social .btn{background:var(--navy);border-color:var(--navy);color:#fff}
+.social .btn:hover,.social .btn:focus-visible{background:transparent;color:var(--navy)}
+.social .btn.ghost{background:transparent;color:var(--navy)}
+.social .btn.ghost:hover,.social .btn.ghost:focus-visible{background:var(--navy);color:#fff}
 /* apoio */
 .why{display:grid;grid-template-columns:repeat(3,1fr);margin:36px 0 0;border-block:2px solid rgba(255,255,255,.22)}
 .why article{padding:28px 26px}
@@ -209,18 +243,11 @@ footer li{margin:6px 0}
 footer a{text-decoration:none}
 footer a:hover{color:var(--gold)}
 .copy{border-top:1px solid rgba(255,255,255,.2);margin-top:30px;padding-top:18px;font-size:.78rem}
-/* faixa e valores */
+/* faixa */
 .mq{overflow:hidden;background:var(--gold);color:var(--ink);border-block:3px solid var(--navy)}
 .mq div{display:flex;width:max-content;animation:mq 60s linear infinite}
 .mq span{font-family:var(--h1);text-transform:uppercase;font-size:1.3rem;padding:10px 22px;white-space:nowrap}
 @keyframes mq{to{transform:translateX(-50%)}}
-.vals{margin-top:24px}
-.vals details{border-bottom:1px solid rgba(255,255,255,.3);padding:11px 0}
-.vals summary{display:block;padding:9px 0;cursor:pointer;font-weight:800;text-transform:uppercase;font-size:.85rem;letter-spacing:.06em;list-style:none}
-.vals summary::-webkit-details-marker{display:none}
-.vals summary::before{content:"+ ";color:var(--gold)}
-.vals details[open] summary::before{content:"– "}
-.vals p{margin-top:6px;font-weight:400}
 /* reveal */
 .js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
 .js .rv.in{opacity:1;transform:none}
@@ -229,9 +256,11 @@ footer a:hover{color:var(--gold)}
 nav ul{position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--navy);padding:20px 4%;gap:18px;display:none;border-bottom:3px solid var(--gold)}
 nav ul.open{display:flex}
 nav a{font-size:.85rem}
+.fab{display:block}
 }
 @media(max-width:900px){
 .about .grid,.story .grid,.medal.ouro,.fg,.why,.quadro{grid-template-columns:1fr}
+.about .grid{gap:30px}
 .ap{grid-template-columns:repeat(2,1fr)}
 .medal.ouro .pic{aspect-ratio:4/3;height:auto;min-height:0}
 .why article+article{border-left:0;border-top:2px solid rgba(255,255,255,.22)}
@@ -243,14 +272,15 @@ nav a{font-size:.85rem}
 .nums .g{grid-template-columns:repeat(2,1fr);row-gap:22px}
 .nums .g>div:nth-child(odd){border-left:0}
 }
-@media(max-width:600px){.logos .pcard{flex-direction:column;text-align:center}.steps{flex-wrap:wrap}.ap{grid-template-columns:1fr}.ap article{min-height:0}}
+@media(max-width:600px){.logos .pcard{flex-direction:column;text-align:center}.steps{flex-wrap:wrap}.ap{grid-template-columns:1fr}.ap article{min-height:0}.social .btn{width:100%;text-align:center}}
 @media(max-width:340px){.fs{font-size:2rem}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}.js .rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<header>
+<div id="prog" aria-hidden="true"></div>
+<header id="hd">
 <div class="wrap nav">
 <a class="brand" href="#inicio" aria-label="Futsal Social - início"><img src="escudo.png" alt="Escudo do Futsal Social" width="46" height="46"><span>Futsal Social</span></a>
 <button class="burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
@@ -262,6 +292,7 @@ nav a{font-size:.85rem}
 </ul></nav>
 </div>
 </header>
+<a class="fab" id="fab" href="#seja-parceiro">Quero apoiar</a>
 
 <main id="conteudo">
 <section class="hero" id="inicio">
@@ -284,11 +315,20 @@ nav a{font-size:.85rem}
 <h2 class="stroke">Um projeto que faz <span style="color:var(--gold)">história</span></h2>
 <p class="lead">Somos um projeto esportivo e social que acredita no poder transformador do futsal. Nossa história é construída por pessoas, dentro e fora das quadras, com dedicação, respeito e compromisso com a formação de uma geração que acredita no esporte como instrumento de transformação.</p>
 </div>
-<div class="rv"><div class="verse">“Porque até aqui o Senhor nos ajudou.”<b>1 Samuel 7:12</b></div><div class="vals" id="vals" aria-label="Nossos valores"></div></div>
+<div class="rv"><div class="verse">“Porque até aqui o Senhor nos ajudou.”<b>1 Samuel 7:12</b></div>
+<div class="vals"><p class="vals-t">O que nos move</p><div class="chips" id="vals" role="group" aria-label="Nossos valores"></div><p class="valtxt" id="valtxt" aria-live="polite"></p></div></div>
 </div>
 </section>
 
 <section class="nums" aria-label="Números do projeto"><div class="wrap g" id="nums"></div></section>
+
+<section class="sec" id="agenda" hidden>
+<div class="wrap">
+<p class="tag">Agenda</p>
+<h2 class="stroke">Próximos jogos</h2>
+<div class="games" id="games"></div>
+</div>
+</section>
 
 <section class="sec story" id="historia">
 <div class="wrap grid">
@@ -301,7 +341,7 @@ nav a{font-size:.85rem}
 <h2 class="stroke">Uma história que começou em quadra. E nunca se limitou a ela.</h2>
 <p>O FutsalFDV, de Futsal Fronteira dos Vales, nasceu da necessidade de qualificar atletas de todas as idades para competições e amistosos de alto rendimento e de promover qualidade de vida em um município que, muitas vezes, não valorizou essa prática tão benéfica para a comunidade.</p>
 <p>Lázaro é o idealizador e responsável por toda a trajetória, um incentivador que assumiu diversas responsabilidades no esporte, mesmo antes de ter seu trabalho reconhecido. Com o crescimento do trabalho e a chegada de atletas de outros municípios, o antigo FutsalFDV passou a se chamar <b>Futsal Social</b>: um nome que traduz o compromisso com o social, com valores e com vidas transformadas pelo esporte.</p>
-<p>Aqui, o respeito ao próximo vale mais do que qualquer vitória, e a integridade tem mais valor do que um troféu.</p>
+<p>Aqui, o respeito ao próximo vale mais do que qualquer vitória, e a integridade tem mais valor do que troféus.</p>
 <a class="btn" href="https://www.instagram.com/futsalsocialbr" target="_blank" rel="noopener noreferrer">Acompanhe no Instagram</a>
 </div>
 </div>
@@ -340,16 +380,23 @@ nav a{font-size:.85rem}
 <section class="sec teams" id="galeria">
 <div class="wrap">
 <p class="tag">Galeria</p>
-<h2 class="stroke">Memória em imagens</h2>
+<h2 class="stroke">Momentos que ficam</h2>
 <div class="gal" id="gal"></div>
+</div>
+</section>
+
+<section class="social" id="redes">
+<div class="wrap">
+<div><h2>Acompanhe a rotina do time</h2><p>Treinos, jogos e bastidores do Futsal Social todos os dias no Instagram.</p></div>
+<div class="row"><a class="btn" href="https://www.instagram.com/futsalsocialbr" target="_blank" rel="noopener noreferrer">Seguir @futsalsocialbr</a></div>
 </div>
 </section>
 
 <section class="sec" id="apoiar">
 <div class="wrap">
-<p class="tag">Parcerias</p>
-<h2 class="stroke">Uma parceria que vale dentro e fora da quadra</h2>
-<p class="lead">Desde 2021, o Futsal Social gera oportunidades para crianças e adolescentes de Fronteira dos Vales e região por meio do esporte, incentivando inclusão e desenvolvimento. Nossa trajetória é construída com dedicação, aprendizado e formação esportiva. E agora queremos fortalecer nossa identidade, ampliar a estrutura e dar continuidade a esse trabalho. Sua empresa pode fazer parte dessa história.</p>
+<p class="tag">Quer ser nosso parceiro?</p>
+<h2 class="stroke">Entre em quadra com a gente</h2>
+<p class="lead">Desde 2021, o Futsal Social transforma esporte em oportunidade para crianças e adolescentes de Fronteira dos Vales e região. Agora queremos crescer: uniforme oficial, mais estrutura e mais competições. Sua marca entra no time e faz parte de cada conquista.</p>
 <div class="why" id="why"></div>
 <h3 class="sub2">Como sua marca pode caminhar com a gente</h3>
 <div class="ap" id="ap"></div>
@@ -388,7 +435,7 @@ nav a{font-size:.85rem}
 </div>
 </footer>
 
-<dialog id="lb" aria-label="Foto ampliada"><button id="lbx" type="button" aria-label="Fechar">×</button><img id="lbi" alt=""></dialog>
+<dialog id="lb" aria-label="Foto ampliada"><button id="lbx" type="button" aria-label="Fechar">×</button><button id="lbp" type="button" aria-label="Foto anterior">‹</button><img id="lbi" alt=""><button id="lbn" type="button" aria-label="Próxima foto">›</button><span id="lbc"></span></dialog>
 
 <script>
 document.documentElement.classList.add("js");
@@ -399,6 +446,10 @@ var CFG={
  modoEdicao:false, /* true = mostra "Anexar: arquivo.jpg" nos espaços sem foto; false = visual limpo para produção */
  contatoParceria:"https://www.instagram.com/futsalsocialbr", /* troque por link do WhatsApp (https://wa.me/55DDDNUMERO) quando houver */
  numeros:{atletas:"+100",categorias:"+10"}, /* anos de trajetória e pódios no JEMG são calculados automaticamente */
+
+ /* PRÓXIMOS JOGOS: a seção só aparece se houver jogos aqui. data no formato AAAA-MM-DD.
+    Exemplo: {data:"2026-12-05",hora:"19h00",titulo:"Futsal Social x Adversário",comp:"Copa X",local:"Ginásio Y"} */
+ agenda:[],
 
  /* EQUIPES: uma linha por categoria. g = "fem" ou "masc" (cria os filtros quando houver mais de 2 equipes).
     pos = enquadramento opcional da foto, ex.: "center 30%". */
@@ -463,14 +514,21 @@ var CFG={
  /* {cat:"Competições",titulo:"",data:"2026-05-10",texto:"",img:"noticia-01.jpg",link:"https://..."} */
  noticias:[],
 
- /* GALERIA: só aparecem as fotos que existirem na pasta. Se nenhuma existir, a seção some sozinha. d = dica (só no modoEdicao) */
+ /* GALERIA: até 12 fotos. Só aparecem as que existirem na pasta (aceita .jpg, .jpeg, .png, .webp, .JPG).
+    Sem nenhuma foto, a seção some sozinha. d = dica (só no modoEdicao) */
  galeria:[
   {f:"galeria-01.jpg",d:"Ex.: equipe campeã comemorando o ouro no JEMG 2026 (horizontal, destaque grande)"},
   {f:"galeria-02.jpg",d:"Ex.: treino da equipe feminina"},
   {f:"galeria-03.jpg",d:"Ex.: treino da equipe masculina"},
   {f:"galeria-04.jpg",d:"Ex.: lance de jogo em quadra"},
   {f:"galeria-05.jpg",d:"Ex.: entrega de medalhas / premiação"},
-  {f:"galeria-06.jpg",d:"Ex.: equipe e comissão técnica juntos (horizontal, destaque grande)"}
+  {f:"galeria-06.jpg",d:"Ex.: equipe e comissão técnica juntos"},
+  {f:"galeria-07.jpg",d:"Ex.: comemoração de gol (destaque grande)"},
+  {f:"galeria-08.jpg",d:"Ex.: equipe masculina posando"},
+  {f:"galeria-09.jpg",d:"Ex.: bastidores / aquecimento"},
+  {f:"galeria-10.jpg",d:"Ex.: torcida e familiares"},
+  {f:"galeria-11.jpg",d:"Ex.: categoria de base em treino"},
+  {f:"galeria-12.jpg",d:"Ex.: taça ou medalhas"}
  ],
 
  /* {nome:"Marca",logo:"parceiro-marca.png",link:"https://instagram.com/...",tipo:"patrocinador|parceiro|apoio"} */
@@ -498,6 +556,10 @@ function pic(src,alt,o){o=o||{};var d=el("div","pic"),i=new Image();i.alt=alt||"
  i.onload=function(){if(o.auto&&i.naturalWidth){var r=i.naturalWidth/i.naturalHeight;if(Math.abs(r-o.auto)>.12){d.classList.add("fit");d.style.setProperty("--bg","url(\""+encodeURI(src)+"\")")}}};
  i.onerror=function(){var p=ph(src,alt,o.hint);p.className+=" fill";d.innerHTML="";d.appendChild(p)};
  i.src=src;d.appendChild(i);return d}
+/* testa extensões alternativas (.jpg, .jpeg, .png, .webp, .JPG) para um arquivo */
+function probe(f,cb){var m=f.match(/^(.*)\.(\w+)$/),c=[f];if(m)["jpg","jpeg","png","webp","JPG"].forEach(function(e){var u=m[1]+"."+e;if(c.indexOf(u)<0)c.push(u)});
+ (function nx(k){if(k>=c.length)return cb(null);var t=new Image();t.onload=function(){cb(c[k])};t.onerror=function(){nx(k+1)};t.src=c[k]})(0)}
+var REDUCE=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
 
 /* hero e Lázaro */
 (function(){var h=img("hero-feminino-jemg-2026.jpg","Equipe feminina campeã do JEMG 2026, Módulo I","bg");h.loading="eager";h.fetchPriority="high";
@@ -505,10 +567,19 @@ function pic(src,alt,o){o=o||{};var d=el("div","pic"),i=new Image();i.alt=alt||"
  $("heroimg").replaceWith(h);
  $("lazimg").replaceWith(img("lazaro.jpg","Lázaro, idealizador do Futsal Social"))})();
 
-/* números */
+/* números (com contagem animada) */
 (function(){var y=new Date().getFullYear()-CFG.inicioProjeto,p=CFG.quadro.filter(function(q){return q.n==="JEMG"}).length;
  var L=[[y,"Anos de trajetória"],[p,"Pódios no JEMG"],[CFG.numeros.atletas,"Atletas"],[CFG.numeros.categorias,"Categorias"]];
- $("nums").innerHTML=L.map(function(x){return"<div class='rv'><strong>"+esc(x[0])+"</strong><span>"+x[1]+"</span></div>"}).join("")})();
+ $("nums").innerHTML=L.map(function(x){var m=String(x[0]).match(/^(\D*)(\d+)(\D*)$/);
+  return"<div class='rv'><strong"+(m?" data-p='"+esc(m[1])+"' data-n='"+m[2]+"' data-s='"+esc(m[3])+"'":"")+">"+esc(x[0])+"</strong><span>"+x[1]+"</span></div>"}).join("")})();
+function conta(e){var n=+e.dataset.n,p=e.dataset.p,s=e.dataset.s,t0=null;
+ function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1100);e.textContent=p+Math.round(n*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(f)}
+ requestAnimationFrame(f)}
+
+/* próximos jogos */
+(function(){if(!CFG.agenda.length)return;$("agenda").hidden=false;
+ $("games").innerHTML=CFG.agenda.map(function(g){var d=new Date(g.data+"T12:00:00"),ok=!isNaN(d);
+  return"<article class='game rv'><div class='d'><b>"+(ok?d.getDate():"")+"</b><span>"+(ok?d.toLocaleDateString("pt-BR",{month:"short"}).replace(".",""):"")+"</span></div><div><h3>"+esc(g.titulo)+"</h3><small>"+esc([g.comp,g.hora,g.local].filter(Boolean).join(" · "))+"</small></div></article>"}).join("")})();
 
 /* equipes + filtros */
 (function(){var t=CFG.equipes,box=$("teams");
@@ -517,9 +588,11 @@ function pic(src,alt,o){o=o||{};var d=el("div","pic"),i=new Image();i.alt=alt||"
   [["","Todas"],["fem","Feminino"],["masc","Masculino"]].forEach(function(g,k){var b=el("button","tab");b.type="button";b.textContent=g[1];b.setAttribute("aria-pressed",k===0?"true":"false");
    b.onclick=function(){tb.querySelectorAll(".tab").forEach(function(x){x.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");cards.forEach(function(c){c.hidden=!!g[0]&&c.dataset.g!==g[0]})};tb.appendChild(b)})}})();
 
-/* trajetória, valores, apoio */
+/* trajetória, valores (chips), pilares, apoio */
 $("tl").innerHTML=CFG.trajetoria.map(function(t){return"<article><strong>"+esc(t[0])+"</strong><b>"+esc(t[1])+"</b><p>"+esc(t[2])+"</p></article>"}).join("");
-$("vals").innerHTML=CFG.valores.map(function(v){return"<details><summary>"+esc(v[0])+"</summary><p>"+esc(v[1])+"</p></details>"}).join("");
+(function(){var box=$("vals"),tx=$("valtxt"),bs=[];
+ function sel(i){bs.forEach(function(b,k){b.setAttribute("aria-pressed",k===i?"true":"false")});tx.textContent=CFG.valores[i][1]}
+ CFG.valores.forEach(function(v,i){var b=el("button","chip");b.type="button";b.textContent=v[0];b.onclick=function(){sel(i)};b.onmouseenter=function(){sel(i)};bs.push(b);box.appendChild(b)});sel(0)})();
 $("why").innerHTML=CFG.pilares.map(function(v){return"<article class='rv'><span class='n'>"+esc(v[0])+"</span><h3>"+esc(v[1])+"</h3><p>"+esc(v[2])+"</p></article>"}).join("");
 $("ap").innerHTML=CFG.apoio.map(function(v){return"<article class='rv'><h3>"+esc(v[0])+"</h3><p>"+esc(v[1])+"</p></article>"}).join("");
 (function(){var mqt=["Mais que futsal","Uma missão para a vida","Futsal Social","Desde 2021"],mh="";for(var k=0;k<24;k++)mh+="<span>★ "+mqt[k%4]+" ★</span>";$("mq").innerHTML=mh})();
@@ -546,17 +619,24 @@ CFG.conquistas.forEach(function(c,i){var d=el("article","medal rv"+(i?"":" ouro"
  a.appendChild(img(n.img,n.titulo));var d=el("div","t");var dt=n.data?new Date(n.data+"T12:00:00").toLocaleDateString("pt-BR"):"";
  d.innerHTML="<em>"+esc(n.cat||"")+(dt?" · "+dt:"")+"</em><h3>"+esc(n.titulo)+"</h3><p>"+esc(n.texto||"")+"</p>";a.appendChild(d);w.appendChild(a)})})();
 
-/* galeria: só mostra fotos existentes; sem nenhuma, a seção some */
-(function(){var g=CFG.galeria,box=$("gal"),ok=[],n=g.length;
+/* galeria: só mostra fotos existentes; sem nenhuma, a seção some. Lightbox com setas, teclado e deslizar */
+var LB=[],LBI=0;
+function lbShow(i){LBI=(i+LB.length)%LB.length;$("lbi").src=LB[LBI].src;$("lbi").alt=LB[LBI].alt;$("lbc").textContent=(LBI+1)+" / "+LB.length;
+ var m=LB.length<2;$("lbp").hidden=m;$("lbn").hidden=m}
+(function(){var g=CFG.galeria,box=$("gal"),res=[],n=g.length;
  function build(){var c=0;
-  g.forEach(function(x,i){if(!ok[i]&&!CFG.modoEdicao)return;c++;var k=c,b=el("button");b.type="button";b.setAttribute("aria-label","Ampliar foto "+k);
-   var alt=x.alt||"Galeria do Futsal Social, foto "+k;b.appendChild(img(x.f,alt,"",x.d));
-   b.onclick=function(){var im=b.querySelector("img");if(!im)return;$("lbi").src=x.f;$("lbi").alt=alt;$("lb").showModal()};box.appendChild(b)});
+  g.forEach(function(x,i){if(!res[i]&&!CFG.modoEdicao)return;c++;var src=res[i]||x.f,k=c,b=el("button");b.type="button";b.setAttribute("aria-label","Ampliar foto "+k);
+   var alt=x.alt||"Galeria do Futsal Social, foto "+k;b.appendChild(img(src,alt,"",x.d));
+   if(res[i]){var idx=LB.length;LB.push({src:src,alt:alt});b.onclick=function(){lbShow(idx);$("lb").showModal()}}box.appendChild(b)});
   if(!c){$("galeria").hidden=true;document.querySelectorAll('a[href="#galeria"]').forEach(function(a){(a.closest("li")||a).hidden=true});$("apoiar").classList.add("teams")}}
  if(!n){build();return}
- g.forEach(function(x,i){var t=new Image();t.onload=function(){ok[i]=1;if(!--n)build()};t.onerror=function(){if(!--n)build()};t.src=x.f})})();
+ g.forEach(function(x,i){probe(x.f,function(f){res[i]=f;if(!--n)build()})})})();
 $("lbx").onclick=function(){$("lb").close()};
+$("lbp").onclick=function(){lbShow(LBI-1)};$("lbn").onclick=function(){lbShow(LBI+1)};
 $("lb").addEventListener("click",function(e){if(e.target===this)this.close()});
+document.addEventListener("keydown",function(e){if(!$("lb").open)return;if(e.key==="ArrowLeft")lbShow(LBI-1);if(e.key==="ArrowRight")lbShow(LBI+1)});
+(function(){var x0=null,lb=$("lb");lb.addEventListener("touchstart",function(e){x0=e.touches[0].clientX},{passive:true});
+ lb.addEventListener("touchend",function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(d)>50)lbShow(LBI+(d<0?1:-1))})})();
 
 /* parceiros */
 (function(){var w=$("plist"),T=[["patrocinador","Patrocinadores"],["parceiro","Parceiros"],["apoio","Apoio"]],temPat=false;
@@ -574,9 +654,17 @@ bg.onclick=function(){var o=mn.classList.toggle("open");bg.setAttribute("aria-ex
 mn.addEventListener("click",function(e){if(e.target.tagName==="A")fecha()});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")fecha()});
 
-/* reveal */
+/* progresso de leitura, cabeçalho e botão flutuante */
+(function(){var pr=$("prog"),hd=$("hd"),fab=$("fab"),tk=false,hide=0;
+ function up(){tk=false;var h=document.documentElement,mx=h.scrollHeight-innerHeight,y=scrollY||h.scrollTop;pr.style.width=(mx>0?Math.min(100,y/mx*100):0)+"%";hd.classList.toggle("sc",y>20);
+  fab.classList.toggle("on",y>innerHeight*.8&&!hide)}
+ addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(up)}},{passive:true});addEventListener("resize",up);up();
+ if("IntersectionObserver"in window){var fo=new IntersectionObserver(function(es){es.forEach(function(e){e.target._v=e.isIntersecting});hide=["seja-parceiro","apoiar"].some(function(i){return $(i)._v});up()},{threshold:.15});
+  ["seja-parceiro","apoiar"].forEach(function(i){fo.observe($(i))})}})();
+
+/* reveal + contagem */
 var rv=document.querySelectorAll(".rv");
-if("IntersectionObserver"in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(r){io.observe(r)})}
+if("IntersectionObserver"in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");var s=e.target.querySelector("strong[data-n]");if(s&&!REDUCE)conta(s);io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(r){io.observe(r)})}
 else rv.forEach(function(r){r.classList.add("in")});
 }catch(err){document.documentElement.classList.remove("js");if(window.console)console.error(err)}
 </script>
