@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Futsal Social | Mais que futsal. Uma missão para a vida.</title>
-<meta name="description" content="Futsal Social: projeto esportivo e social de futsal em Fronteira dos Vales, MG. Do Sub-8 ao adulto, masculino e feminino. Onde há Deus, propósito e trabalho sério, nasce um legado.">
+<meta name="description" content="Futsal Social: projeto esportivo e social de futsal em Fronteira dos Vales, MG. Do Sub-10 ao adulto, masculino e feminino. Onde há Deus, propósito e trabalho sério, nasce um legado.">
 <meta property="og:title" content="Futsal Social | Mais que futsal. Uma missão para a vida.">
 <meta property="og:description" content="Projeto esportivo e social de futsal em Fronteira dos Vales, MG. Desde 2021.">
 <meta property="og:type" content="website">
@@ -181,8 +181,8 @@ dialog button{position:absolute;top:16px;right:16px;background:var(--gold);borde
 .cta-row{margin-top:34px}
 /* parceiros */
 .partners{background:#fff;color:var(--ink)}
-.partners h2.stroke{color:var(--blue)}
-.partners .tag{color:var(--blue)}
+.partners h2.stroke{color:var(--navy);text-shadow:3px 3px 0 var(--gold)}
+.partners .tag{color:var(--navy)}
 .pt{font-family:var(--h2);color:var(--navy);text-transform:uppercase;margin:26px 0 12px;font-size:1.2rem;border-bottom:3px solid var(--gold);display:inline-block}
 .logos{display:flex;flex-wrap:wrap;gap:18px}
 .logos a{width:170px;height:100px;border:1px solid #d6dcf5;display:flex;align-items:center;justify-content:center;padding:14px;transition:.2s}
@@ -312,7 +312,7 @@ nav a{font-size:.85rem}
 <section class="sec" id="equipes">
 <div class="wrap">
 <p class="tag">Equipes</p>
-<h2 class="stroke">Do Sub-8 ao adulto</h2>
+<h2 class="stroke">Do Sub-10 ao adulto</h2>
 <p class="lead">Categorias masculinas e femininas, com treinos durante a semana.</p>
 <div class="tabs" id="tabs" role="group" aria-label="Filtrar equipes"></div>
 <div class="cards" id="teams"></div>
@@ -349,7 +349,7 @@ nav a{font-size:.85rem}
 <div class="wrap">
 <p class="tag">Parcerias</p>
 <h2 class="stroke">Uma parceria que vale dentro e fora da quadra</h2>
-<p class="lead">Desde 2021, o Futsal Social reúne meninos e meninas de Fronteira dos Vales e região em torno de esporte, valores e disciplina, com pódios em competições regionais e estaduais. Agora entramos em um novo ciclo: ter identidade própria, com uniforme, estrutura e continuidade. Se a sua empresa acredita no esporte como caminho de desenvolvimento, vamos construir isso juntos.</p>
+<p class="lead">Desde 2021, o Futsal Social gera oportunidades para crianças e adolescentes de Fronteira dos Vales e região por meio do esporte, incentivando inclusão e desenvolvimento. Nossa trajetória é construída com dedicação, aprendizado e formação esportiva. E agora queremos fortalecer nossa identidade, ampliar a estrutura e dar continuidade a esse trabalho. Sua empresa pode fazer parte dessa história.</p>
 <div class="why" id="why"></div>
 <h3 class="sub2">Como sua marca pode caminhar com a gente</h3>
 <div class="ap" id="ap"></div>
@@ -403,8 +403,8 @@ var CFG={
  /* EQUIPES: uma linha por categoria. g = "fem" ou "masc" (cria os filtros quando houver mais de 2 equipes).
     pos = enquadramento opcional da foto, ex.: "center 30%". */
  equipes:[
-  {nome:"Futsal Feminino",sub:"Do Sub-8 ao adulto",img:"equipe-feminino.jpg",g:"fem"},
-  {nome:"Futsal Masculino",sub:"Do Sub-8 ao adulto",img:"equipe-masculino.jpg",g:"masc"}
+  {nome:"Futsal Feminino",sub:"Do Sub-10 ao adulto",img:"equipe-feminino.jpg",g:"fem"},
+  {nome:"Futsal Masculino",sub:"Do Sub-10 ao adulto",img:"equipe-masculino.jpg",g:"masc"}
   /* Exemplos para adicionar (copie, cole e ajuste):
   ,{nome:"Feminino Sub-18",sub:"Futsal Feminino",img:"equipe-fem-sub18.jpg",g:"fem"}
   ,{nome:"Masculino Sub-16",sub:"Futsal Masculino",img:"equipe-masc-sub16.jpg",g:"masc"}
@@ -414,8 +414,8 @@ var CFG={
  /* CARDS COM FOTO (JEMG). O primeiro é o destaque. pos = enquadramento opcional. */
  conquistas:[
   {m:"Ouro",c:"Futsal Feminino · Módulo I · JEMG 2026",img:"conquista-ouro-fem-m1-2026.jpg",y:"2026",t:"As campeãs do JEMG 2026, Módulo I: o resultado de um trabalho construído treino a treino.",passos:[["2024","Prata"],["2025","Bronze"],["2026","Ouro"]]},
-  {m:"Prata",c:"Futsal Masculino · Módulo II · JEMG 2026",img:"conquista-prata-masc-m2-2026.jpg",y:"2026",t:"Vice-campeões do JEMG 2026, Módulo II, no futsal masculino.",pos:"center center"},
-  {m:"Bronze",c:"Futsal Feminino · Módulo II · JEMG 2025",img:"conquista-bronze-fem-m1-2025.jpg",y:"2025",t:"Terceiro lugar no JEMG 2025, Módulo II, no futsal feminino."},
+  {m:"Prata",c:"Futsal Masculino · Módulo II · JEMG 2026",img:"conquista-prata-masc-m2-2026.jpg",y:"2026",t:"Vice-campeões do JEMG 2026, Módulo II, no futsal masculino."},
+  {m:"Bronze",c:"Futsal Feminino · Módulo I · JEMG 2025",img:"conquista-bronze-fem-m1-2025.jpg",y:"2025",t:"Terceiro lugar no JEMG 2025, Módulo I, no futsal feminino."},
   {m:"Prata",c:"Futsal Feminino · Módulo II · JEMG 2024",img:"conquista-prata-fem-m2-2024.jpg",y:"2024",t:"Vice-campeãs do JEMG 2024, Módulo II."},
   {m:"Prata",c:"Futsal Masculino · Módulo I · JEMG 2022",img:"conquista-prata-masc-m1-2022.jpg",y:"2022",t:"Vice-campeões do JEMG 2022, Módulo I, no futsal masculino."}
  ],
@@ -431,8 +431,8 @@ var CFG={
   {m:"prata",n:"JEMG",a:2026,c:"Masculino · Módulo II"},
   {m:"prata",n:"JEMG",a:2024,c:"Feminino · Módulo II"},
   {m:"prata",n:"JEMG",a:2022,c:"Masculino · Módulo I"},
-  {m:"prata",n:"Liga dos Campeões",a:2022,c:"Masculino · Sub-12"},
-  {m:"bronze",n:"JEMG",a:2025,c:"Feminino · Módulo II"},
+  {m:"prata",n:"Liga dos Campeões",a:2022,c:["Masculino · Sub-12","Masculino · Sub-16"]},
+  {m:"bronze",n:"JEMG",a:2025,c:"Feminino · Módulo I"},
   {m:"bronze",n:"Copa Integração",a:2024,c:"Feminino · Sub-18"}
  ],
 
@@ -440,24 +440,24 @@ var CFG={
 
  trajetoria:[
   ["2021","Nasce o FutsalFDV","Começa a trajetória que daria origem ao Futsal Social."],
-  ["2022","Dupla prata","Vice-campeões no JEMG (Módulo I) e na Liga dos Campeões (Sub-12), no masculino."],
+  ["2022","Dupla prata","Vice-campeões no JEMG (Módulo I) e na Liga dos Campeões (Sub-12 e Sub-16), no masculino."],
   ["2024","Temporada de títulos","Ouro na Copa NUCA e no Torneio dos Amigos Umburatiba. Prata no JEMG e bronze na Copa Integração."],
   ["2025","Ouro e bronze","Ouro na Liga dos Campeões (Sub-16) e no Pré-JEMG SH. Bronze no JEMG feminino."],
   ["2026","Ano de ouro","Ouro no JEMG feminino (Módulo I) e no Torneio de Verão Machacalis. Prata no JEMG masculino (Módulo II)."]
  ],
 
  pilares:[
-  ["01","Resultado em quadra","Pódios no JEMG e em torneios da região, no masculino e no feminino, do Sub-12 ao adulto."],
-  ["02","Impacto que a comunidade vê","Formamos atletas para o jogo mais importante: a vida, com respeito, integridade e perseverança em cada treino."],
-  ["03","Visibilidade com propósito","Sua marca presente em uniformes, redes sociais e eventos do projeto, conforme o formato da parceria."]
+  ["01","Resultado em quadra","Pódios no JEMG e em torneios regionais, no masculino e no feminino, do Sub-12 ao adulto."],
+  ["02","Impacto que a comunidade vê","Preparamos atletas para além das quadras: com respeito, integridade e perseverança, dentro e fora do esporte."],
+  ["03","Visibilidade com propósito","Sua marca em uniformes, redes sociais e eventos do projeto, de acordo com a parceria."]
  ],
  apoio:[
-  ["Uniforme oficial","Hoje o time ainda joga sem uniforme próprio. Sua marca pode ser a primeira a vestir essa história, em cada jogo e em cada comemoração."],
-  ["Material esportivo","Bolas, coletes e equipamentos que sustentam treinos de qualidade, semana após semana."],
-  ["Transporte","Para disputar campeonatos, o time precisa chegar. Sua parceria coloca nossos atletas na estrada."],
-  ["Alimentação","Lanche e hidratação para os atletas em treinos e viagens de competição."],
-  ["Inscrições e competições","Estrutura para manter nossas equipes no jogo, dos torneios da região ao JEMG."],
-  ["Projetos sociais","Ações em conjunto que unem a sua instituição e o esporte em benefício da comunidade."]
+  ["Uniforme oficial","Hoje, o time ainda não tem uniforme próprio. Sua marca pode vestir essa história em cada jogo e comemoração."],
+  ["Material esportivo","Bolas, coletes e equipamentos para treinos de qualidade e evolução contínua."],
+  ["Transporte","Sua parceria leva nossos atletas às competições."],
+  ["Alimentação","Lanches e hidratação para os atletas durante treinos e viagens."],
+  ["Inscrições e competições","Apoio para nossas equipes disputarem torneios regionais e o JEMG."],
+  ["Projetos sociais","Ações que aproximam sua instituição do esporte e beneficiam toda a comunidade."]
  ],
 
  /* {cat:"Competições",titulo:"",data:"2026-05-10",texto:"",img:"noticia-01.jpg",link:"https://..."} */
@@ -522,14 +522,14 @@ $("tl").innerHTML=CFG.trajetoria.map(function(t){return"<article><strong>"+esc(t
 $("vals").innerHTML=CFG.valores.map(function(v){return"<details><summary>"+esc(v[0])+"</summary><p>"+esc(v[1])+"</p></details>"}).join("");
 $("why").innerHTML=CFG.pilares.map(function(v){return"<article class='rv'><span class='n'>"+esc(v[0])+"</span><h3>"+esc(v[1])+"</h3><p>"+esc(v[2])+"</p></article>"}).join("");
 $("ap").innerHTML=CFG.apoio.map(function(v){return"<article class='rv'><h3>"+esc(v[0])+"</h3><p>"+esc(v[1])+"</p></article>"}).join("");
-(function(){var mqt=["Mais que futsal","Uma missão para a vida","Futsal Social","Desde 2021"],mh="";for(var k=0;k<24;k++)mh+="<span>"+mqt[k%4]+" ★</span>";$("mq").innerHTML=mh})();
+(function(){var mqt=["Mais que futsal","Uma missão para a vida","Futsal Social","Desde 2021"],mh="";for(var k=0;k<24;k++)mh+="<span>★ "+mqt[k%4]+" ★</span>";$("mq").innerHTML=mh})();
 
 /* conquistas com foto */
 CFG.conquistas.forEach(function(c,i){var d=el("article","medal rv"+(i?"":" ouro"));
  if(i===0){d.appendChild(pic(c.img,c.c,{pos:c.pos,hint:c.c}));
   var st=c.passos?'<p class="steps-t">Evolução do feminino no JEMG</p><ol class="steps">'+c.passos.map(function(p){return"<li>"+esc(p[0])+"<br>"+esc(p[1])+"</li>"}).join("")+"</ol>":"";
   d.appendChild(el("div","t",'<span class="yr">'+esc(c.y)+'</span><b>'+esc(c.m)+'</b><small>'+esc(c.c)+'</small><p>'+esc(c.t)+'</p>'+st+'<a class="btn" href="https://www.instagram.com/futsalsocialbr" target="_blank" rel="noopener noreferrer">Acompanhe no Instagram</a>'))}
- else{d.tabIndex=0;d.setAttribute("role","button");d.setAttribute("aria-expanded","false");d.appendChild(pic(c.img,c.c,{auto:4/3,pos:c.pos,hint:c.c}));
+ else{d.tabIndex=0;d.setAttribute("role","button");d.setAttribute("aria-expanded","false");d.appendChild(pic(c.img,c.c,{pos:c.pos,hint:c.c}));
   d.appendChild(el("div","t","<b>"+esc(c.m)+"</b><small>"+esc(c.c)+"</small>"));d.appendChild(el("div","info","<b>"+esc(c.y)+"</b><p>"+esc(c.t)+"</p>"));
   var tg=function(){d.setAttribute("aria-expanded",d.classList.toggle("open"))};d.onclick=tg;
   d.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();tg()}}}
