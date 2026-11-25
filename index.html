@@ -13,11 +13,11 @@
 <link rel="icon" href="escudo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Barlow+Condensed:ital,wght@1,700;1,800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* Fontes livres (OFL, uso comercial permitido): Archivo (títulos) e Barlow Condensed (frases de destaque) */
+/* Fontes livres (OFL, uso comercial permitido): Oswald (títulos e frases de destaque) */
 :root{--blue:#0b3bf0;--navy:#001bb5;--gold:#FFC72C;--green:#12c01f;--cream:#ffe9b8;--white:#fff;--ink:#06124a;
---h1:"Archivo",Impact,sans-serif;--h2:"Barlow Condensed",Impact,sans-serif;--tx:"Montserrat",Arial,sans-serif}
+--h1:"Oswald",Impact,sans-serif;--h2:"Oswald",Impact,sans-serif;--tx:"Montserrat",Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{font-family:var(--tx);color:var(--white);background:var(--blue);line-height:1.6;overflow-x:hidden}
@@ -27,9 +27,9 @@ a{color:inherit}
 .sec{padding:clamp(56px,9vw,110px) 0}
 .stroke{font-family:var(--h1);text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:var(--white);
 text-shadow:3px 3px 0 var(--green),5px 5px 0 var(--cream)}
-.stroke{font-weight:900;font-stretch:78%}
-.brand,.nums strong,.card .cap b{font-weight:900;font-stretch:80%}
-.tag,.medal b,.news h3,.pt,footer h4{font-style:italic;font-weight:800}
+.stroke{font-weight:900;}
+.brand,.nums strong,.card .cap b{font-weight:900;}
+.tag,.medal b,.news h3,.pt,footer h4{font-weight:800}
 .stroke.gold{color:var(--gold)}
 .tag{font-family:var(--h2);color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-size:1rem;margin-bottom:12px}
 h2.stroke{font-size:clamp(2.2rem,6vw,4.4rem);margin-bottom:22px}
@@ -59,15 +59,15 @@ nav a.cta{background:var(--gold);color:var(--ink);padding:9px 16px}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,27,181,.35) 0%,rgba(11,59,240,.6) 45%,rgba(0,20,140,.97) 100%)}
 .hero>.bg{animation:zout 16s ease-in-out infinite alternate;transform-origin:center 40%}
 @keyframes zout{from{transform:scale(1.25)}to{transform:scale(1)}}
-.kick{font-family:var(--h2);font-style:italic;font-weight:800;text-transform:uppercase;font-size:clamp(1.4rem,3.4vw,2.4rem);letter-spacing:.02em;margin:0!important}
+.kick{font-family:var(--h2);font-weight:800;text-transform:uppercase;font-size:clamp(1.4rem,3.4vw,2.4rem);letter-spacing:.02em;margin:0!important}
 .kick span{color:var(--gold)}
 .fs{font-family:var(--h1);text-transform:uppercase;font-size:clamp(3.6rem,14vw,10.5rem);line-height:.86;margin:4px 0 22px}
 .fs .ln{display:flex}
 .fs i{font-style:normal;color:#fff;text-shadow:.035em .035em 0 var(--green),.065em .065em 0 var(--cream)}
-/* largura normal (100%) em todas as letras; só o peso varia: FU/TS pesado, AL bold. Para afinar, reduza font-stretch (ex.: 85%) */
-.fs i{font-stretch:100%}.fs .a,.fs .b{font-weight:900}.fs .c{font-weight:700}
+/* só o peso varia: FU/TS bold, AL medium */
+.fs .a,.fs .b{font-weight:700}.fs .c{font-weight:500}
 .fs .g i{color:var(--gold)}
-.hero .sub{font-family:var(--h2);font-style:italic;font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,3vw,2rem);line-height:1.1;margin-bottom:12px!important}
+.hero .sub{font-family:var(--h2);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,3vw,2rem);line-height:1.1;margin-bottom:12px!important}
 .hero p{max-width:52ch;font-weight:600;font-size:clamp(1rem,1.6vw,1.2rem);margin-bottom:28px}
 .hero .row{display:flex;gap:14px;flex-wrap:wrap}
 .hero .shield{width:clamp(70px,10vw,110px)}
@@ -150,7 +150,7 @@ footer a:hover{color:var(--gold)}
 /* faixa, valores, trajetória, apoio */
 .mq{overflow:hidden;background:var(--gold);color:var(--ink);border-block:3px solid var(--navy)}
 .mq div{display:flex;width:max-content;animation:mq 40s linear infinite}
-.mq span{font-family:var(--h1);font-weight:900;font-stretch:80%;text-transform:uppercase;font-size:1.3rem;padding:10px 22px;white-space:nowrap}
+.mq span{font-family:var(--h1);font-weight:900;text-transform:uppercase;font-size:1.3rem;padding:10px 22px;white-space:nowrap}
 @keyframes mq{to{transform:translateX(-50%)}}
 .vals{margin-top:24px}
 .vals details{border-bottom:1px solid rgba(255,255,255,.3);padding:11px 0}
@@ -161,7 +161,7 @@ footer a:hover{color:var(--gold)}
 .tl{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 0 16px;margin-top:10px}
 .tl article{flex:0 0 250px;scroll-snap-align:start;border-top:5px solid var(--gold);padding-top:14px;transition:transform .3s}
 .tl article:hover{transform:translateY(-6px)}
-.tl strong{font-family:var(--h1);font-weight:900;font-stretch:80%;font-size:3rem;color:var(--gold);line-height:1;display:block}
+.tl strong{font-family:var(--h1);font-weight:900;font-size:3rem;color:var(--gold);line-height:1;display:block}
 .tl b{display:block;text-transform:uppercase;margin:6px 0 4px}
 .medal{position:relative;overflow:hidden}
 .medal[tabindex]{cursor:pointer}
@@ -169,7 +169,7 @@ footer a:hover{color:var(--gold)}
 .medal:hover .info,.medal:focus-within .info,.medal.open .info{transform:none}
 .medal .info b{color:var(--gold)}
 .medal .info p{font-size:.85rem;font-weight:500;margin-top:4px}
-.medal.ouro .yr{font-family:var(--h1);font-weight:900;font-stretch:80%;font-size:clamp(3.5rem,9vw,6.5rem);line-height:.9;color:var(--gold);-webkit-text-stroke:2px var(--navy);display:block}
+.medal.ouro .yr{font-family:var(--h1);font-weight:900;font-size:clamp(3.5rem,9vw,6.5rem);line-height:.9;color:var(--gold);-webkit-text-stroke:2px var(--navy);display:block}
 .medal.ouro p{margin:10px 0;font-weight:500}
 .steps{display:flex;gap:10px;list-style:none;margin:14px 0 18px}
 .steps li{flex:1;border:2px solid var(--navy);padding:8px 12px;font-size:.8rem;font-weight:700}
@@ -177,7 +177,7 @@ footer a:hover{color:var(--gold)}
 .ap{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:30px}
 .ap article{background:var(--navy);border:2px solid rgba(255,255,255,.2);padding:24px;min-height:170px;transition:.3s}
 .ap article:hover{background:var(--gold);color:var(--ink);transform:translateY(-6px)}
-.ap h3{font-family:var(--h2);font-style:italic;font-weight:800;text-transform:uppercase;font-size:1.5rem;line-height:1}
+.ap h3{font-family:var(--h2);font-weight:800;text-transform:uppercase;font-size:1.5rem;line-height:1}
 .ap p{margin-top:8px;font-weight:500}
 .pcard{display:flex;gap:20px;align-items:center;background:var(--navy);color:#fff;text-decoration:none;max-width:620px;padding:18px;border:3px solid var(--gold)}
 .pcard img{width:170px;flex:none}
