@@ -33,7 +33,7 @@ text-shadow:3px 3px 0 var(--green),5px 5px 0 var(--cream)}
 .stroke.gold{color:var(--gold)}
 .tag{font-family:var(--h2);color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-size:1rem;margin-bottom:12px}
 h2.stroke{font-size:clamp(2.2rem,6vw,4.4rem);margin-bottom:22px}
-.lead{font-size:clamp(1rem,1.6vw,1.2rem);max-width:60ch;font-weight:500}
+.lead{font-size:clamp(1rem,1.5vw,1.15rem);max-width:60ch;font-weight:400;line-height:1.75}
 .btn{display:inline-block;font-family:var(--tx);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.85rem;
 text-decoration:none;padding:15px 28px;border:2px solid var(--gold);background:var(--gold);color:var(--ink);transition:.25s;cursor:pointer}
 .btn:hover,.btn:focus-visible{background:transparent;color:var(--gold)}
@@ -59,16 +59,13 @@ nav a.cta{background:var(--gold);color:var(--ink);padding:9px 16px}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,27,181,.35) 0%,rgba(11,59,240,.6) 45%,rgba(0,20,140,.97) 100%)}
 .hero>.bg{animation:zout 16s ease-in-out infinite alternate;transform-origin:center 40%}
 @keyframes zout{from{transform:scale(1.25)}to{transform:scale(1)}}
-.kick{font-family:var(--h2);font-weight:800;text-transform:uppercase;font-size:clamp(1.4rem,3.4vw,2.4rem);letter-spacing:.02em;margin:0!important}
+.kick{font-family:var(--h2);font-weight:500;text-transform:uppercase;font-size:clamp(1.1rem,2.6vw,1.7rem);letter-spacing:.06em;margin:0!important}
 .kick span{color:var(--gold)}
-.fs{font-family:var(--h1);text-transform:uppercase;font-size:clamp(3.6rem,14vw,10.5rem);line-height:.86;margin:4px 0 22px}
-.fs .ln{display:flex}
-.fs i{font-style:normal;color:#fff;text-shadow:.035em .035em 0 var(--green),.065em .065em 0 var(--cream)}
-/* só o peso varia: FU/TS bold, AL medium */
-.fs .a,.fs .b{font-weight:700}.fs .c{font-weight:500}
-.fs .g i{color:var(--gold)}
-.hero .sub{font-family:var(--h2);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,3vw,2rem);line-height:1.1;margin-bottom:12px!important}
-.hero p{max-width:52ch;font-weight:600;font-size:clamp(1rem,1.6vw,1.2rem);margin-bottom:28px}
+.fs{font-family:var(--h1);font-weight:700;text-transform:uppercase;font-size:clamp(2.4rem,7vw,6rem);line-height:1.02;margin:8px 0 14px;text-shadow:.04em .04em 0 var(--green),.07em .07em 0 var(--cream)}
+.fs em{font-style:normal;color:var(--gold)}
+.hero .sub{font-family:var(--h2);font-weight:500;text-transform:uppercase;font-size:clamp(1.15rem,2.6vw,1.8rem);letter-spacing:.04em;line-height:1.15;margin-bottom:14px!important}
+.hero .txt{font-weight:400;font-size:clamp(.98rem,1.4vw,1.1rem);line-height:1.75;max-width:54ch;opacity:.96}
+.hero p{margin-bottom:26px;text-shadow:0 1px 10px rgba(0,10,90,.55)}
 .hero .row{display:flex;gap:14px;flex-wrap:wrap}
 .hero .shield{width:clamp(70px,10vw,110px)}
 .spark{position:absolute;color:var(--gold);font-size:2rem}
@@ -86,7 +83,7 @@ nav a.cta{background:var(--gold);color:var(--ink);padding:9px 16px}
 .frame{position:relative}
 .frame::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--gold);z-index:0}
 .frame>*{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover}
-.story p{margin-bottom:16px;font-weight:500}
+.story p{margin-bottom:16px;font-weight:400;line-height:1.75}
 /* equipes */
 .teams{background:var(--navy)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:34px}
@@ -154,10 +151,10 @@ footer a:hover{color:var(--gold)}
 @keyframes mq{to{transform:translateX(-50%)}}
 .vals{margin-top:24px}
 .vals details{border-bottom:1px solid rgba(255,255,255,.3);padding:11px 0}
-.vals summary{cursor:pointer;font-weight:800;text-transform:uppercase;font-size:.85rem;letter-spacing:.06em;list-style:none}
+.vals summary{display:block;padding:9px 0;cursor:pointer;font-weight:800;text-transform:uppercase;font-size:.85rem;letter-spacing:.06em;list-style:none}
 .vals summary::before{content:"+ ";color:var(--gold)}
 .vals details[open] summary::before{content:"– "}
-.vals p{margin-top:6px;font-weight:500}
+.vals p{margin-top:6px;font-weight:400}
 .tl{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 0 16px;margin-top:10px}
 .tl article{flex:0 0 250px;scroll-snap-align:start;border-top:5px solid var(--gold);padding-top:14px;transition:transform .3s}
 .tl article:hover{transform:translateY(-6px)}
@@ -168,9 +165,9 @@ footer a:hover{color:var(--gold)}
 .medal .info{position:absolute;inset:auto 0 0;background:rgba(0,27,181,.97);color:#fff;padding:16px;transform:translateY(101%);transition:transform .35s}
 .medal:hover .info,.medal:focus-within .info,.medal.open .info{transform:none}
 .medal .info b{color:var(--gold)}
-.medal .info p{font-size:.85rem;font-weight:500;margin-top:4px}
+.medal .info p{font-size:.85rem;font-weight:400;margin-top:4px}
 .medal.ouro .yr{font-family:var(--h1);font-weight:900;font-size:clamp(3.5rem,9vw,6.5rem);line-height:.9;color:var(--gold);-webkit-text-stroke:2px var(--navy);display:block}
-.medal.ouro p{margin:10px 0;font-weight:500}
+.medal.ouro p{margin:10px 0;font-weight:400}
 .steps{display:flex;gap:10px;list-style:none;margin:14px 0 18px}
 .steps li{flex:1;border:2px solid var(--navy);padding:8px 12px;font-size:.8rem;font-weight:700}
 .steps li:last-child{background:var(--gold)}
@@ -178,13 +175,17 @@ footer a:hover{color:var(--gold)}
 .ap article{background:var(--navy);border:2px solid rgba(255,255,255,.2);padding:24px;min-height:170px;transition:.3s}
 .ap article:hover{background:var(--gold);color:var(--ink);transform:translateY(-6px)}
 .ap h3{font-family:var(--h2);font-weight:800;text-transform:uppercase;font-size:1.5rem;line-height:1}
-.ap p{margin-top:8px;font-weight:500}
+.ap p{margin-top:8px;font-weight:400}
 .pcard{display:flex;gap:20px;align-items:center;background:var(--navy);color:#fff;text-decoration:none;max-width:620px;padding:18px;border:3px solid var(--gold)}
-.pcard img{width:170px;flex:none}
-.pcard p{font-weight:500;font-size:.9rem}
+.logos .pcard{width:auto;height:auto;max-width:620px;padding:18px;justify-content:flex-start;border:3px solid var(--gold)}
+.logos .pcard:hover{border-color:var(--gold);transform:translateY(-3px)}
+.pcard img{width:170px;height:auto;flex:none;max-height:none}
+.pcard p{font-weight:400;font-size:.9rem}
+.logos .slot{border:2px dashed var(--navy)}
 .slot{display:inline-flex;align-items:center;justify-content:center;width:170px;height:100px;border:2px dashed var(--navy);color:var(--navy);font-weight:800;font-size:.75rem;text-transform:uppercase;text-align:center;text-decoration:none}
 .slot:hover{background:var(--navy);color:#fff}
-@media(max-width:600px){.pcard{flex-direction:column;text-align:center}}
+@media(max-width:600px){.logos .pcard{flex-direction:column;text-align:center}}
+@media(max-width:340px){.fs{font-size:2rem}}
 /* reveal */
 .js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
 .js .rv.in{opacity:1;transform:none}
@@ -223,9 +224,9 @@ nav ul.open{display:flex}
 <div id="heroimg"></div>
 <div class="wrap">
 <p class="kick">Um projeto que faz <span>história</span></p>
-<h1 class="fs" aria-label="Futsal Social"><span class="ln" aria-hidden="true"><i class="a">FU</i><i class="b">TS</i><i class="c">AL</i></span><span class="ln g" aria-hidden="true"><i class="a">SO</i><i class="b">CI</i><i class="c">AL</i></span></h1>
-<p class="sub">Onde há Deus, propósito e trabalho sério, nasce um legado.</p>
-<p>Desde 2021, formamos atletas para o jogo mais importante: a vida. Idealizado por Lázaro Santos, o projeto agora busca parceiros para dar o próximo passo: uniforme próprio e estrutura para competir com independência.</p>
+<h1 class="fs" aria-label="Futsal Social"><span aria-hidden="true">FUTSAL <em>SOCIAL</em></span></h1>
+<p class="sub">Mais que futsal. Uma missão para a vida.</p>
+<p class="txt">Onde há Deus, propósito e trabalho sério, nasce um legado. Desde 2021, formamos atletas para o jogo mais importante: a vida. Agora buscamos parceiros para o próximo passo: uniforme próprio e estrutura para competir.</p>
 <div class="row"><a class="btn" href="#apoiar">Quero apoiar</a><a class="btn ghost" href="#projeto">Conheça nossa história</a></div>
 </div>
 </section>
@@ -414,7 +415,7 @@ $("lb").addEventListener("click",function(e){if(e.target===this)this.close()});
  T.forEach(function(t){var l=CFG.parceiros.filter(function(p){return p.tipo===t[0]});if(!l.length)return;
   w.appendChild(el("h3","pt",t[1]));var r=el("div","logos");
   l.forEach(function(p){var a=el("a",p.texto?"pcard":"");a.href=safe(p.link);a.target="_blank";a.rel="noopener noreferrer";a.setAttribute("aria-label",p.nome);a.appendChild(img(p.logo,p.nome));if(p.texto)a.appendChild(el("p","","<b>"+esc(p.nome)+"</b><br>"+esc(p.texto)));r.appendChild(a)});w.appendChild(r)});
- w.appendChild(el("h3","pt","Patrocinadores"));w.appendChild(el("a","slot","Espaço reservado<br>para patrocinador")).href="#seja-parceiro"})();
+ w.appendChild(el("h3","pt","Patrocinadores"));var sl=el("div","logos"),sa=el("a","slot","Espaço reservado<br>para patrocinador");sa.href="#seja-parceiro";sl.appendChild(sa);w.appendChild(sl)})();
 $("ptn").href=safe(CFG.contatoParceria);
 $("yr").textContent=new Date().getFullYear();
 /* menu mobile */
